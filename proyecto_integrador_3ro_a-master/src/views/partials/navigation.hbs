@@ -1,0 +1,60 @@
+<div class="container">
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+
+        <img src="/img/logo.png" width="75" alt="./img/logo.png">
+
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          {{#if user}}
+
+          {{#if (colab user.fk_rol) }}
+          <li class="nav-item">
+            <a class="nav-link" id="salir" href="/registros">Registros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="admin" href="/admin">Usuarios</a>
+          </li>
+          {{else}}
+          <li class="nav-item">
+            <a class="nav-link" id="planActual" aria-current="page" href="/list">Plan actual</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="planes" href="/add">Planes</a>
+          </li>
+          {{/if }}
+
+          <li class="nav-item">
+            <a class="nav-link" id="perfil" href="/profile">Perfil</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" id="salir" href="/logout">Salir</a>
+          </li>
+
+          {{else}}
+          <li class="nav-item">
+            <b>
+              <a class="nav-link" id="login" href="/signin">Login</a>
+            </b>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="registrarse" href="/signup">Registrase</a>
+          </li>
+          {{/if}}
+
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
